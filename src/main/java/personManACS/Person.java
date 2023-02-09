@@ -20,7 +20,7 @@ public class Person {
 	 */
 	
 	public Person(String name, int age, String gender) {
-		if(name.isBlank() || age < 0 || (gender != "Male" || gender != "Female"))
+		if(name.isBlank() || age < 0 || (gender != "Male" && gender != "Female"))
 			throw new RuntimeException("Datos introducidos inválidos. Los datos deben ser: nombre no vacío, edad positiva y género Male o Female. Los datos introducidos son: Nombre - " + 
 					name + " ,edad - " + age + " ,género - " + gender);
 		this.name = name;
@@ -43,7 +43,7 @@ public class Person {
 	 */
 	
 	
-	public double [] averageAgePerGender (List<Person> persons) { 
+	public static double [] averageAgePerGender (List<Person> persons) { 
 		if(!persons.isEmpty()) {
 			int totalMale = 0, totalFemale = 0, totalAgeMale = 0, totalAgeFemale = 0;
 			for (Person person : persons) {
