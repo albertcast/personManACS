@@ -1,4 +1,5 @@
-package personManACS;
+package persona;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,8 +22,8 @@ public class Person {
 	
 	public Person(String name, int age, String gender) {
 		if(name.isBlank() || age < 0 || (gender != "Male" && gender != "Female"))
-			throw new RuntimeException("Datos introducidos inválidos. Los datos deben ser: nombre no vacío, edad positiva y género Male o Female. Los datos introducidos son: Nombre - " + 
-					name + " ,edad - " + age + " ,género - " + gender);
+			throw new RuntimeException("Datos introducidos invï¿½lidos. Los datos deben ser: nombre no vacï¿½o, edad positiva y gï¿½nero Male o Female. Los datos introducidos son: Nombre - " + 
+					name + " ,edad - " + age + " ,gï¿½nero - " + gender);
 		this.name = name;
 		this.age = age;
 		this.gender = gender;	
@@ -50,7 +51,7 @@ public class Person {
 				if(person.gender().equalsIgnoreCase("Male")) {
 					totalMale++;
 					totalAgeMale += person.age();
-				} else if(person.gender().equalsIgnoreCase("Female")) {
+				} else {
 					totalFemale++;
 					totalAgeFemale += person.age();
 				}
@@ -68,8 +69,6 @@ public class Person {
 				aux[1] = 0;
 			}
 			return aux;
-			
-			
 		}
 		
 		return null;
